@@ -1,0 +1,240 @@
+
+
+
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Biografia Arbër Frangu</title>
+
+<link rel="icon" href="logo.jpg">
+
+<style>
+
+/* RESET */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#020617,#0f172a,#1e293b);
+  color:white;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+}
+
+/* CONTAINER */
+
+.bio-container{
+  width:100%;
+  max-width:1300px;
+  display:flex;
+  gap:40px;
+  background:rgba(15,23,42,0.9);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* LEFT IMAGE */
+
+.bio-image{
+  width:40%;
+  min-height:700px;
+  overflow:hidden;
+  position:relative;
+}
+
+.bio-image img{
+  width:80%;
+  height:80%;
+  object-fit:cover;
+  margin-left: 50px;
+  margin-top: 80px;
+}
+
+
+
+.bio-content{
+  width:60%;
+  padding:50px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* NAME */
+
+.bio-content h1{
+  font-size:3rem;
+  color:#60a5fa;
+  margin-bottom:15px;
+}
+
+/* ROLE */
+
+.role{
+  display:inline-block;
+  background:#2563eb;
+  padding:10px 18px;
+  border-radius:30px;
+  margin-bottom:30px;
+  font-weight:bold;
+}
+
+/* BIO TEXT */
+
+.bio-text{
+  line-height:1.9;
+  font-size:1.1rem;
+  color:#cbd5e1;
+}
+
+/* INFO */
+
+.info{
+  margin-top:30px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.info-box{
+  background:rgba(255,255,255,0.05);
+  padding:15px 20px;
+  border-radius:15px;
+  min-width:220px;
+}
+
+.info-box h3{
+  color:#60a5fa;
+  margin-bottom:8px;
+  font-size:1rem;
+}
+
+.info-box p{
+  color:#e2e8f0;
+}
+
+/* BUTTON */
+
+.btn{
+  margin-bottom: 20px;
+  width:fit-content;
+  padding:14px 24px;
+  background:#2563eb;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  transition:0.3s;
+
+}
+
+.btn:hover{
+  background:#1d4ed8;
+  transform:scale(1.05);
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+  .bio-container{
+    flex-direction:column;
+  }
+
+  .bio-image{
+    width:100%;
+    min-height:450px;
+  }
+
+  .bio-content{
+    width:100%;
+    padding:30px;
+  }
+
+  .bio-content h1{
+    font-size:2.2rem;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bio-container">
+
+  <!-- LEFT -->
+
+  <div class="bio-image">
+    <img src="7f1a5082-8fe1-4442-9469-9273c2632719.JPG" alt="">
+  </div>
+
+  <!-- RIGHT -->
+
+  <div class="bio-content">
+
+    <h1>Arbër Frangu</h1>
+
+    <div class="role">
+      Arsimtar i Kimisë
+    </div>
+
+    <div class="bio-text">
+<div class="bio-text">
+Arbër Frangu u lind më 3 shtator 1991 në Sllatinë të Poshtme, komuna e Vitisë. Studimet bachelor, master dhe doktoratë i përfundoi në fushën e Kimisë në Universitetin e Prishtinës “Hasan Prishtina”, ku në vitin 2023 fitoi titullin Doktor i Shkencave të Kimisë. Gjithashtu përfundoi programin pedagogjik në Universitetin e Tetovës, duke marrë titullin Profesor i Diplomuar i Kimisë.
+
+Gjatë karrierës akademike realizoi mobilitete shkencore në universitete të Evropës dhe mori pjesë në konferenca ndërkombëtare, duke publikuar artikuj shkencorë në revista prestigjioze ndërkombëtare.
+
+<br><br>
+
+Karrierën profesionale e filloi si analist kimik, ndërsa nga viti 2016 është i angazhuar në arsim. Që nga viti 2017 punon në SHFMU “Halil Alidema”, ku ka udhëhequr nxënës në gara dhe projekte shkencore me rezultate të larta në nivel vendi. Paralelisht, është i angazhuar edhe në mësimdhënie universitare në Universitetin e Prishtinës.
+</div>
+
+<div class="info">
+    <div class="info">
+
+      <div class="info-box">
+        <h3>Datëlindja</h3>
+        <p>03.09.1991</p>
+      </div>
+
+      <div class="info-box">
+        <h3>Vendbanimi</h3>
+        <p>Sllatinë</p>
+      </div>
+
+      <div class="info-box">
+        <h3>Në punë nga</h3>
+        <p>2017</p>
+      </div>
+
+      <div class="info-box">
+        <h3>Lënda</h3>
+        <p>Kimi</p>
+      </div>
+
+    </div>
+
+    <a href="arsimtaret.html" class="btn">
+      Kthehu
+    </a>
+
+  </div>
+
+</div>
+
+</body>
+</html>

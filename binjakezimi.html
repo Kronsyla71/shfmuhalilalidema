@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<title>Binjakëzimi i Shkollave</title>
+<link rel="icon"
+type="image/png"
+href="logo.jpg">
+
+<link rel="stylesheet"
+href="Style.css">
+<link rel="stylesheet"
+href="binjakezimi.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+crossorigin="anonymous"
+referrerpolicy="no-referrer" />
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background: linear-gradient(135deg,#0f172a,#1e293b,#0b1220);
+    color:white;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:50px 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+header h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+header p{
+    opacity:0.8;
+}
+
+/* SECTION */
+section{
+    padding:40px;
+}
+
+/* CARDS */
+.container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background: rgba(255,255,255,0.08);
+    border-radius:15px;
+    width:320px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* BUTTON */
+button{
+    padding:12px 18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#38bdf8;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#0ea5e9;
+}
+
+/* INFO */
+#info{
+    text-align:center;
+    margin-top:20px;
+    font-size:18px;
+}
+
+/* FOOTER */
+
+</style>
+</head>
+
+<body>
+<header class="navbar">
+
+<a href="index.html">
+
+<div id="loader">
+<h1>SHFMU "Halil Alidema" Pozheran</h1>
+</div>
+
+</a>
+
+<a href="index.html">
+<img src="logo.jpg" alt="">
+</a>
+
+<nav>
+
+<a href="Historia.html">Historia</a>
+
+<a href="Garat.html">Garat</a>
+
+<a href="stafikryesor.html">Stafi</a>
+
+<a href="kalendari.html">Kalendari</a>
+
+</nav>
+
+</header>
+
+
+
+<header>
+    <h1>🤝 Binjakëzimi i Shkollave</h1>
+    <p> &  – Bashkëpunim Edukativ</p>
+</header>
+
+<section>
+    <div class="container">
+
+        <div class="card">
+            <img src="shkupi4.jpg" alt="">
+            <div class="card-content">
+                <h2></h2>
+                <p>Shkollë moderne me fokus në edukim, teknologji dhe zhvillim të nxënësve.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="albania.jpg" alt="">
+            <div class="card-content">
+                <h2></h2>
+                <p>Shkollë partnere që bashkëpunon në projekte ndërkombëtare dhe shkëmbime nxënësish.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section style="text-align:center;">
+    <h2>📸 Momentet e Bashkëpunimit</h2>
+    <div class="gallery">
+        <img src="shkupi2.jpg">
+        <img src="shkupi3.jpg">
+        <img src="shkupi4.jpg">
+        <img src="uee.jpg">
+    </div>
+</section>
+
+<section style="text-align:center;">
+    <h2>📢 Rreth Bashkëpunimit</h2>
+    <button onclick="showInfo()">Shiko Info</button>
+    <p id="info"></p>
+</section>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h3>Linqe të Shpejta</h3>
+
+<ul>
+
+<li>
+<a href="Stafi.html">Stafi</a>
+</li>
+
+<li>
+<a href="Historia.html">Historia</a>
+</li>
+
+<li>
+<a href="aktivitetet.html">Aktivitetet</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Adresa</h3>
+
+<p>
+
+📍 Rruga Shaban Haliti, Nr. 21
+<br>
+Pozheran, Kosovë
+
+</p>
+
+</div>
+
+<div class="footer-box">
+
+<h2>Punuar nga:</h2>
+
+<ul>
+
+<li>Dior Musa</li>
+<li>Edison Pira</li>
+<li>Kron Syla</li>
+<li>Olt Dragobuzhda</li>
+<li>Ylli Syla</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026
+Shkolla Halil Alidema
+
+
+<script>
+function showInfo(){
+    document.getElementById("info").innerHTML =
+    "Ky binjakëzim i shkollave mundëson shkëmbim kulturor, projekte të përbashkëta dhe zhvillim të aftësive të nxënësve në nivel modern 🚀";
+}
+</script>
+
+</body>
+</html>

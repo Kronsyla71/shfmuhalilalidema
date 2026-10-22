@@ -1,0 +1,174 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#c9b28f;
+    font-family:"Georgia", serif;
+    color:#2e1d0e;
+    overflow-x:hidden;
+}
+
+/* CONTAINER */
+.container{
+    width:90%;
+    margin:70px auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    padding:45px;
+    background:
+    linear-gradient(rgba(77,52,29,0.82), rgba(44,28,14,0.88)),
+    url("https://www.transparenttextures.com/patterns/aged-paper.png");
+    border:5px solid #6f4b2a;
+    border-radius:14px;
+    box-shadow:
+    0 10px 35px rgba(0,0,0,0.35),
+    inset 0 0 20px rgba(255,255,255,0.05);
+    position:relative;
+}
+
+/* dekor vintage */
+.container::before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border:1px solid rgba(255,255,255,0.12);
+    pointer-events:none;
+}
+
+/* FOTO */
+.container-img{
+    width:45%;
+}
+
+.container-img img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border:8px solid #8b5e34;
+    border-radius:8px;
+    box-shadow:
+    0 0 0 5px #c29a6b,
+    0 12px 25px rgba(0,0,0,0.4);
+    filter:sepia(35%) contrast(1.05);
+    transition:0.4s ease;
+}
+
+.container-img img:hover{
+    transform:scale(1.02) rotate(-1deg);
+    filter:sepia(50%);
+}
+
+/* TEKSTI */
+.container-text{
+    width:55%;
+    color:#f8e7c9;
+    font-size:1.15rem;
+    line-height:2;
+    text-align:justify;
+    text-shadow:1px 1px 4px rgba(0,0,0,0.4);
+    position:relative;
+}
+
+/* shkronja e pare */
+.container-text::first-letter{
+    font-size:3.5rem;
+    float:left;
+    line-height:1;
+    padding-right:10px;
+    color:#e0b77f;
+    font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .container{
+        flex-direction:column;
+        padding:25px;
+    }
+
+    .container-img,
+    .container-text{
+        width:100%;
+    }
+
+    .container-img img{
+        height:320px;
+    }
+
+    .container-text{
+        font-size:1rem;
+        line-height:1.8;
+    }
+
+    .container-text::first-letter{
+        font-size:2.5rem;
+    }
+}
+
+.back-btn{
+    position:fixed;
+    top:120px;
+    left:30px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:14px 24px;
+
+    background:rgba(15,23,42,0.75);
+    color:white;
+    text-decoration:none;
+
+    border:1px solid rgba(96,165,250,0.35);
+    border-radius:18px;
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 0 20px rgba(59,130,246,0.2),
+    0 0 45px rgba(59,130,246,0.08);
+
+    font-size:1rem;
+    font-weight:600;
+
+    z-index:999;
+    transition:0.35s ease;
+}
+
+.back-btn i{
+    transition:0.35s ease;
+}
+
+.back-btn:hover{
+    transform:translateY(-4px) scale(1.03);
+
+    background:rgba(30,41,59,0.95);
+
+    box-shadow:
+    0 0 30px rgba(96,165,250,0.35),
+    0 0 60px rgba(168,85,247,0.15);
+}
+
+.back-btn:hover i{
+    transform:translateX(-5px);
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    .back-btn{
+        top:95px;
+        left:15px;
+
+        padding:12px 18px;
+        font-size:0.9rem;
+    }
+}
