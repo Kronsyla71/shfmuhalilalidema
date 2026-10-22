@@ -1,0 +1,190 @@
+
+
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<title>Students System</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0f172a;
+    color:white;
+    padding:20px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+}
+
+form{
+    background:#111827;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+input, select, button{
+    width:100%;
+    padding:10px;
+    margin:5px 0;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    background:#22c55e;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.stats{
+    background:#1e293b;
+    padding:10px;
+    border-radius:10px;
+}
+
+.card{
+    background:#111827;
+    padding:10px;
+    border-radius:10px;
+    margin-top:10px;
+    border-left:4px solid #3b82f6;
+}
+
+.badge{
+    float:right;
+    background:#f59e0b;
+    padding:3px 10px;
+    border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>📊 Students System</h2>
+
+<!-- FORM -->
+<form method="POST">
+
+<input type="text" name="name" placeholder="Emri i nxënësit" required>
+
+<select name="gender" required>
+    <option value="">Gjinia</option>
+    <option value="male">Mashkull</option>
+    <option value="female">Femër</option>
+</select>
+
+<div class="table">
+    <div class="row">
+        <span>Gjuhë Shqipe</span>
+        <input type="number" name="gjuheshqipe" min="0" max="5" step="1" oninvalid="this.setCustomValidity('Vlera duhet të jetë maksimum 5')" oninput="this.setCustomValidity('')">
+        
+    </div>
+
+    <div class="row">
+        <span>Anglisht</span>
+        <input type="number" name="gjuhangleze" min="0" max="5" step="1" oninvalid="this.setCustomValidity('Vlera duhet të jetë maksimum 5')" oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="row">
+        <span>Gjermanisht</span>
+        <input type="number" name="gjuhgjermane" min="0" max="5" step="1" oninvalid="this.setCustomValidity('Vlera duhet të jetë maksimum 5')" oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="row">
+        <span>Matematikë</span>
+        <input type="number" name="matematike" min="0" max="5" step="1" oninvalid="this.setCustomValidity('Vlera duhet të jetë maksimum 5')" oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="row">
+        <span>Fizikë</span>
+        <input type="number" name="fizike" min="0" max="5" step="1" oninvalid="this.setCustomValidity('Vlera duhet të jetë maksimum 5')" oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="row">
+        <span>Kimi</span>
+        <input type="number" name="kimi" min="0" max="5" step="1" oninvalid="this.setCustomValidity('Vlera duhet të jetë maksimum 5')" oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="row">
+        <span>Biologji</span>
+        <input type="number" name="biologji" min="0" max="5" step="1" oninvalid="this.setCustomValidity('Vlera duhet të jetë maksimum 5')" oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="row">
+        <span>Histori</span>
+        <input type="number" name="histori" min="0" max="5" step="1" oninvalid="this.setCustomValidity('Vlera duhet të jetë maksimum 5')" oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="row">
+        <span>Gjeografi</span>
+        <input type="number" name="gjeografi" min="0" max="5" step="1"oninvalid="this.setCustomValidity('Vlera duhet të jetë maksimum 5')" oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="row">
+        <span>TIK</span>
+        <input type="number" name="tik" min="0" max="5" step="1" oninvalid="this.setCustomValidity('Vlera duhet të jetë maksimum 5')" oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="row">
+        <span>Zgjedhore</span>
+        <input type="number" name="zgjedhore" min="0" max="5" step="1" >
+    </div>
+</div>
+
+<button type="submit" name="save_student">➕ Ruaj Nxënësin</button>
+
+</form>
+<!-- FILTER -->
+<form method="GET">
+    <input type="hidden" name="period_id" value="">
+
+    <select name="gender">
+        <option value="">Të gjithë</option>
+        <option value="male">Meshkuj</option>
+        <option value="female">Femra</option>
+    </select>
+
+    <button>🔎 Filtro</button>
+</form>
+
+<!-- STATS -->
+<div class="grid">
+    <div class="stats">👦  Meshkuj</div>
+    <div class="stats">👧  Femra</div>
+    <div class="stats">🌟  Shkëlqyeshëm</div>
+    <div class="stats">⚡  Shumë mirë</div>
+</div>
+
+<!-- LIST -->
+<h3>📋 Nxënësit</h3>
+
+
+
+<div class="card">
+    <b></b>
+    <span class="badge"></span>
+    <br>
+    👤  | 📊 
+</div>
+
+
+
+</div>
+
+</body>
+</html>

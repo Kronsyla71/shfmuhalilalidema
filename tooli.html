@@ -1,0 +1,577 @@
+
+
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mjet llogaritës pë Kujdestarë</title>
+
+<link rel="icon"
+type="image/png"
+href="logo.jpg">
+
+<link rel="stylesheet"
+href="Style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+crossorigin="anonymous"
+referrerpolicy="no-referrer" />
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    padding:20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.title{
+    font-size:35px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.card{
+    background:#111827;
+    border-radius:18px;
+    padding:20px;
+    margin-top:15px;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  padding: 0.6rem 1.7rem;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, darkblue, black);
+  border-bottom: 5px solid silver;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  animation: navDrop 1.2s ease;
+  gap: 40px;
+}
+
+/* NAV LEFT */
+.navbar nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* LOGO CENTER */
+.navbar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0;
+  order: 2;
+}
+
+/* TITLE (optional, keep centered or remove) */
+.navbar h1 {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+  order: 3;
+}
+
+/* PUSH NAV LEFT SIDE */
+.navbar nav {
+  order: 1;
+}
+
+/* LINKS */
+.navbar a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #60a5fa;
+  transition: 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+input,
+select,
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+input,
+select{
+    background:#1e293b;
+    color:white;
+}
+
+button{
+    background:#22c55e;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.02);
+    background:#16a34a;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.box{
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.blue{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+}
+
+.pink{
+    background:linear-gradient(135deg,#ec4899,#be185d);
+}
+
+.green{
+    background:linear-gradient(135deg,#22c55e,#15803d);
+}
+
+.orange{
+    background:linear-gradient(135deg,#f59e0b,#d97706);
+}
+
+.student{
+    background:#1e293b;
+    padding:15px;
+    border-radius:15px;
+    margin-top:12px;
+}
+
+.badge{
+    float:right;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:14px;
+    background:#f59e0b;
+}
+
+.average{
+    color:#38bdf8;
+    margin-top:10px;
+    display:block;
+}
+
+.subjects{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+.footer {
+  background: linear-gradient(135deg, #0f172a, #172554, #1e3a8a);
+  color: white;
+  margin-top: 80px;
+  padding-top: 70px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 0 20px 40px;
+}
+
+.footer-box h2,
+.footer-box h3 {
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+}
+
+.footer-box p {
+  color: #dbeafe;
+  line-height: 1;
+  font-size: 0.95rem;
+}
+
+.footer-box ul {
+  list-style: none;
+}
+
+.footer-box ul li {
+  margin-bottom: 12px;
+}
+
+.footer-box ul li a {
+  color: #dbeafe;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.footer-box ul li a:hover {
+  color: #60a5fa;
+  transform: translateX(5px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #bfdbfe;
+}   
+
+</style>
+</head>
+
+<body>
+<div style="margin:16px;padding:12px;background:#fff3cd;border:1px solid #e0c36a;border-radius:8px;color:#664d03;">Ky version HTML është statik. Hyrja, ruajtja e nxënësve dhe statistikat që kërkojnë PHP dhe bazë të dhënash nuk funksionojnë pa server/backend.</div>
+<header class="navbar">
+
+<a href="index.html">
+
+<div id="loader">
+<h1>SHFMU "Halil Alidema" Pozheran</h1>
+</div>
+
+</a>
+
+<a href="index.html">
+<img src="logo.jpg" alt="">
+</a>
+
+<nav>
+
+<a href="Historia.html">Historia</a>
+
+<a href="Garat.html">Garat</a>
+
+<a href="stafikryesor.html">Stafi</a>
+
+<a href="kalendari.html">Kalendari</a>
+<a href="tooli.html">Mjet për Kujdestar</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="title">
+📚 Tool Profesional i Mësuesit
+</div>
+
+<div class="stats">
+
+
+
+<div class="box blue">
+🏆 Meshkuj Shkëlqyeshëm
+<br><br>
+
+</div>
+
+<div class="box green">
+✅ Meshkuj Shumë Mirë
+<br><br>
+
+</div>
+
+<div class="box blue">
+📚 Meshkuj Mirë
+<br><br>
+
+</div>
+
+<div class="box orange">
+⚠️ Meshkuj Mjaftueshëm
+<br><br>
+
+</div>
+
+<div class="box pink">
+❌ Meshkuj Shumë Keq
+<br><br>
+
+</div>
+
+
+
+
+
+
+<div class="box pink">
+🌟 Femra Shkëlqyeshëm
+<br><br>
+
+</div>
+
+<div class="box orange">
+💎 Femra Shumë Mirë
+<br><br>
+
+</div>
+
+<div class="box pink">
+📖 Femra Mirë
+<br><br>
+
+</div>
+
+<div class="box green">
+🟡 Femra Mjaftueshëm
+<br><br>
+
+</div>
+
+<div class="box blue">
+🚫 Femra Shumë Keq
+<br><br>
+
+</div>
+
+
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>➕ Shto Nxënës</h3>
+
+<form method="POST">
+
+<input type="text"
+name="name"
+placeholder="Emri i nxënësit"
+required>
+
+<select name="gender" required>
+    <option value="">Zgjedh Gjininë</option>
+    <option value="male">Mashkull</option>
+    <option value="female">Femër</option>
+</select>
+
+<div class="subjects">
+
+<input type="number" name="gjuheshqipe" placeholder="Gjuhë Shqipe" min="0" max="5" step="0.1" required>
+<input type="number" name="gjuhangleze" placeholder="Gjuhë Angleze" min="0" max="5" step="0.1" required>
+<input type="number" name="gjuhgjermane" placeholder="Gjuhë Gjermane" min="0" max="5" step="0.1" required>
+<input type="number" name="artfig" placeholder="Art Figurativ" min="0" max="5" step="0.1" required>
+<input type="number" name="artmuzik" placeholder="Art Muzikor" min="0" max="5" step="0.1" required>
+<input type="number" name="matematike" placeholder="Matematikë" min="0" max="5" step="0.1" required>
+<input type="number" name="fizike" placeholder="Fizikë" min="0" max="5" step="0.1" required>
+<input type="number" name="kimi" placeholder="Kimi" min="0" max="5" step="0.1" required>
+<input type="number" name="biologji" placeholder="Biologji" min="0" max="5" step="0.1" required>
+<input type="number" name="histori" placeholder="Histori" min="0" max="5" step="0.1" required>
+<input type="number" name="gjeografi" placeholder="Gjeografi" min="0" max="5" step="0.1" required>
+<input type="number" name="edukateqytetare" placeholder="Edukatë Qytetare" min="0" max="5" step="0.1" required>
+<input type="number" name="edukatefizike" placeholder="Edukatë Fizike" min="0" max="5" step="0.1" required>
+<input type="number" name="tik" placeholder="TIK" min="0" max="5" step="0.1" required>
+<input type="number" name="zgjedhore" placeholder="Lëndë Zgjedhore" min="0" max="5" step="0.1" required>
+
+</div>
+
+<button type="submit" name="save_student">
+💾 Ruaj Nxënësin
+</button>
+
+</form>
+
+</div>
+
+<div class="card">
+
+<h3>🔍 Filtro Nxënësit</h3>
+
+<form method="GET">
+
+<select name="gender">
+
+<option value="">Të gjithë</option>
+
+<option value="male"
+>
+Meshkuj
+</option>
+
+<option value="female"
+>
+Femra
+</option>
+
+</select>
+
+<button type="submit">
+Filtro
+</button>
+
+</form>
+
+<h3 style="margin-top:20px;">
+📋 Lista e Nxënësve
+</h3>
+
+
+
+<div class="student">
+
+<b>
+
+</b>
+
+<span class="badge">
+
+</span>
+
+<br><br>
+
+👤 
+
+
+<br>
+
+<span class="average">
+📊 Mesatarja:
+
+</span>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</div>
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h3>Linqe të Shpejta</h3>
+
+<ul>
+
+<li>
+<a href="Stafi.html">Stafi</a>
+</li>
+
+<li>
+<a href="Historia.html">Historia</a>
+</li>
+
+<li>
+<a href="aktivitetet.html">Aktivitetet</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Adresa</h3>
+
+<p>
+
+📍 Rruga Izet Alidema, Nr. 12
+<br>
+Pozheran, Kosovë
+
+</p>
+
+</div>
+
+<div class="footer-box">
+
+<h2>Punuar nga:</h2>
+
+<ul>
+
+<li>Dior Musa</li>
+<li>Edison Pira</li>
+<li>Kron Syla</li>
+<li>Olt Dragobuzhda</li>
+<li>Ylli Syla</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+
+© 
+Shkolla Halil Alidema
+
+</p>
+
+</div>
+
+</footer>
+
+</body>
+</html> 

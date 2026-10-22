@@ -1,0 +1,69 @@
+
+
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:linear-gradient(135deg,#0f172a,#312e81);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    color:white;
+}
+
+.box{
+    background:rgba(255,255,255,0.1);
+    padding:30px;
+    border-radius:20px;
+    width:350px;
+}
+
+input,button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    background:#3b82f6;
+    color:white;
+    cursor:pointer;
+}
+
+.error{
+    color:red;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Login</h2>
+
+<form method="POST">
+
+<input type="email" name="email" placeholder="Email" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<button name="login">Kyçu në llogarinë tënd të ekszituar</button>
+
+</form>
+
+
+
+</div>
+
+</body>
+</html>
