@@ -1,0 +1,142 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#d8c7a1;
+    font-family:"Georgia", serif;
+    overflow-x:hidden;
+    color:#2d1f12;
+}
+
+/* SEKSIONET */
+.section{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    padding:90px 8%;
+    background:
+    linear-gradient(rgba(90,60,25,0.55), rgba(40,25,10,0.65)),
+    url("https://www.transparenttextures.com/patterns/old-wall.png");
+    border-top:4px solid #6b4423;
+    border-bottom:4px solid #6b4423;
+    position:relative;
+}
+
+/* E DYTA */
+.reverse{
+    background:
+    linear-gradient(rgba(70,45,20,0.6), rgba(25,15,8,0.7)),
+    url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+}
+
+/* DEKOR HISTORIK */
+.section::before{
+    content:"";
+    position:absolute;
+    top:20px;
+    left:20px;
+    right:20px;
+    bottom:20px;
+    border:2px solid rgba(255,255,255,0.15);
+    pointer-events:none;
+}
+
+/* TEXT */
+.text{
+    width:48%;
+}
+
+.text h1{
+    font-size:3rem;
+    line-height:1.4;
+    color:#f5deb3;
+    text-shadow:2px 2px 8px rgba(0,0,0,0.5);
+    margin-bottom:30px;
+    position:relative;
+}
+
+.text h1::after{
+    content:"";
+    display:block;
+    width:120px;
+    height:4px;
+    background:#d4a373;
+    margin-top:18px;
+    border-radius:10px;
+}
+
+/* FOTO */
+.image{
+    width:48%;
+}
+
+.image img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border:10px solid #6b4423;
+    border-radius:8px;
+    box-shadow:
+    0 0 0 6px #b08968,
+    0 15px 35px rgba(0,0,0,0.45);
+    filter:sepia(25%) contrast(1.05);
+    transition:0.4s ease;
+}
+
+.image img:hover{
+    transform:scale(1.02) rotate(-1deg);
+    filter:sepia(40%);
+}
+
+/* BUTTON */
+.more-btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:#6b4423;
+    color:#fff3df;
+    text-decoration:none;
+    border:2px solid #d4a373;
+    border-radius:6px;
+    font-size:1rem;
+    letter-spacing:1px;
+    transition:0.3s ease;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.more-btn:hover{
+    background:#8b5e34;
+    transform:translateY(-3px);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .section,
+    .reverse{
+        flex-direction:column;
+        text-align:center;
+        padding:70px 20px;
+    }
+
+    .text,
+    .image{
+        width:100%;
+    }
+
+    .text h1{
+        font-size:2rem;
+    }
+
+    .text h1::after{
+        margin:auto;
+        margin-top:18px;
+    }
+
+    .image img{
+        height:320px;
+    }
+}
