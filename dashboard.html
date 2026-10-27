@@ -1,0 +1,158 @@
+    <?php
+session_start();
+include "db.php";
+
+if(!isset($_SESSION['user_id'])){
+    header("Location: login.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+if(isset($_POST['create_period'])){
+
+    $school_name = $_POST['school_name'];
+    $school_year = $_POST['school_year'];
+    $period_number = $_POST['period_number'];
+
+    $sql = "INSERT INTO periods (user_id,school_name,school_year,period_number)
+    VALUES ('$user_id','$school_name','$school_year','$period_number')";
+
+    $conn->query($sql);
+
+    header("Location: dashboard.php");
+    exit();
+}
+
+$periods = $conn->query("SELECT * FROM periods WHERE user_id='$user_id'");
+?>
+
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:linear-gradient(135deg,#0f172a,#312e81);
+    color:white;
+    margin:0;
+    padding:20px;
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+a{
+    color:white;
+    text-decoration:none;
+    background:red;
+    padding:10px 15px;
+    border-radius:10px;
+}
+
+.card{
+    background:rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+input,select,button{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    background:#3b82f6;
+    color:white;
+    cursor:pointer;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.box{
+    background:rgba(255,255,255,0.1);
+    padding:15px;
+    border-radius:15px;
+}
+
+.open{
+    display:inline-block;
+    margin-top:10px;
+    background:#8b5cf6;
+    padding:8px 12px;
+    border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+
+<h2>Welcome <?= $_SESSION['username'] ?></h2>
+
+<a href="logout.php">Logout</a>
+
+</div>
+
+<div class="card">
+
+<h3>Krijo Periudhë</h3>
+
+<form method="POST">
+
+<input type="text" name="school_name" placeholder="Emri i shkollës" required>
+
+<input type="text" name="school_year" placeholder="Viti shkollor (2025-2026)" required>
+
+<select name="period_number">
+<option value="1">Periudha 1</option>
+<option value="2">Periudha 2</option>
+<option value="3">Periudha 3</option>
+<option value="4">Periudha 4</option>
+</select>
+
+<button name="create_period">Krijo</button>
+
+</form>
+
+</div>
+
+<div class="grid">
+
+<?php while($p = $periods->fetch_assoc()){ ?>
+
+<div class="box">
+
+<h3><?= $p['school_name'] ?></h3>
+<p><?= $p['school_year'] ?></p>
+<p>Periudha <?= $p['period_number'] ?></p>
+
+<a class="open" href="students.php?period_id=<?= $p['id'] ?>">
+Hap
+</a>
+
+</div>
+
+<?php } ?>
+
+</div>
+
+</body>
+</html>

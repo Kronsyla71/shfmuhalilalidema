@@ -1,0 +1,848 @@
+
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arsimtarët 6 | 9</title>
+
+<link rel="icon" href="logo.jpg">
+
+<style>
+
+/* RESET */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#020617,#0f172a,#1e293b);
+  color:white;
+  scroll-behavior:smooth;
+}
+
+/* HERO */
+
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:3.2rem;
+  color:#60a5fa;
+}
+
+.hero p{
+  margin-top:15px;
+  color:#cbd5e1;
+  font-size:1.1rem;
+}
+
+.btn{
+  margin-top:30px;
+  padding:12px 22px;
+  border:none;
+  border-radius:30px;
+  background:#3b82f6;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#2563eb;
+  transform:scale(1.05);
+}
+
+/* NAV */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  padding: 0.6rem 6.7rem;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, darkblue, black);
+  border-bottom: 5px solid silver;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  animation: navDrop 1.2s ease;
+  gap: 40px;
+}
+
+/* NAV LEFT */
+.navbar nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* LOGO CENTER */
+.navbar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0;
+  order: 2;
+}
+
+/* TITLE (optional, keep centered or remove) */
+.navbar h1 {
+  color: white;
+  font-size: 1.6rem;
+  margin: 0;
+  order: 3;
+}
+
+/* PUSH NAV LEFT SIDE */
+.navbar nav {
+  order: 1;
+}
+
+/* LINKS */
+.navbar a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #60a5fa;
+  transition: 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* SECTION */
+
+.section{
+  padding:70px 20px;
+}
+
+.section h2{
+  text-align:center;
+  margin-bottom:35px;
+  font-size:2.4rem;
+  color:#60a5fa;
+}
+
+/* GRID */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,320px));
+  justify-content:center;
+  gap:30px;
+}
+
+/* CARD LINK */
+
+.card-link{
+  text-decoration:none;
+  color:white;
+}
+
+/* CARD */
+
+.card{
+  background:#0f172a;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.4s;
+}
+
+.cardspecial{
+  background:#0f172a;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.4s;
+grid-column: 2;
+  
+}
+
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* IMAGE */
+
+.card img{
+  width:100%;
+  height:380px;
+  object-fit:cover;
+}
+
+/* CONTENT */
+
+.card-content{
+  padding:20px;
+  text-align:center;
+}
+
+.card-content h3{
+  color:#60a5fa;
+  margin-bottom:12px;
+  font-size:1.5rem;
+}
+
+.role{
+  background:rgba(255,255,255,0.06);
+  padding:10px;
+  border-radius:12px;
+  font-weight:bold;
+}
+
+/* RESPONSIVE */
+
+/* =========================
+   CLEAN MODERN MOBILE STYLE
+========================= */
+
+@media (max-width: 768px) {
+
+  body{
+    overflow-x:hidden;
+  }
+
+  /* NAVBAR */
+  .navbar{
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:14px 12px;
+    gap:14px;
+  }
+
+  .navbar img{
+    width:65px;
+    height:65px;
+  }
+
+  .navbar h1{
+    font-size:1rem;
+    text-align:center;
+  }
+
+  .navbar nav{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .navbar a{
+    font-size:0.9rem;
+    padding:9px 14px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+  }
+
+  .navbar a:hover{
+    background:rgba(255,255,255,0.18);
+  }
+
+  /* DROPDOWN */
+  .dropdown{
+    width:auto;
+  }
+
+  .dropbtn{
+    padding:10px 14px;
+    font-size:0.9rem;
+  }
+
+  .dropdown-content{
+    left:50%;
+    transform:translateX(-50%);
+    min-width:180px;
+  }
+
+  /* HERO */
+  .hero{
+    height:75vh;
+    padding:20px;
+    background-position:center;
+  }
+
+  .overlay{
+    width:100%;
+    height:auto;
+    padding:25px 18px;
+    border-radius:18px;
+    text-align:center;
+    backdrop-filter:blur(8px);
+  }
+
+  .overlay h1{
+    font-size:2rem;
+    line-height:1.2;
+  }
+
+  .overlay p{
+    font-size:0.95rem;
+  }
+
+  /* ABOUT */
+  .about{
+    padding:55px 15px;
+  }
+
+  .about h2{
+    font-size:1.8rem;
+  }
+
+  .about p{
+    font-size:0.95rem;
+  }
+
+  /* CARDS */
+  .cards{
+    padding:55px 15px;
+  }
+
+  .cards h2{
+    font-size:1.8rem;
+  }
+
+  .card-container{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .card{
+    padding:22px;
+    border-radius:20px;
+  }
+
+  .card h3{
+    font-size:1.1rem;
+  }
+
+  .card p{
+    font-size:0.92rem;
+  }
+
+  /* SECTION */
+  .section{
+    flex-direction:column;
+    text-align:center;
+    padding:60px 15px;
+    gap:30px;
+  }
+
+  .text,
+  .image,
+  .robotics-img{
+    width:100%;
+  }
+
+  .text h1{
+    font-size:2rem;
+  }
+
+  .text p{
+    font-size:0.95rem;
+  }
+
+  .image img,
+  .robotics-img img{
+    height:auto;
+    max-height:420px;
+    object-fit:cover;
+  }
+
+  /* BUTTONS */
+  .hero-btn,
+  .more-btn{
+    width:100%;
+    text-align:center;
+    padding:14px;
+    font-size:0.95rem;
+  }
+
+  /* FOOTER */
+  .footer{
+    margin-top:50px;
+  }
+
+  .footer-container{
+    flex-direction:column;
+    text-align:center;
+    gap:30px;
+  }
+
+  .footer-box{
+    width:100%;
+  }
+
+  .footer-box p{
+    line-height:1.6;
+  }
+
+  .footer-bottom{
+    font-size:0.8rem;
+    padding:15px 10px;
+  }
+
+  /* TICKER */
+  .ticker{
+    font-size:0.85rem;
+    padding:8px;
+  }
+
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width:480px){
+
+  .navbar{
+    padding:12px 10px;
+  }
+
+  .navbar img{
+    width:55px;
+    height:55px;
+  }
+
+  .navbar h1{
+    font-size:0.9rem;
+  }
+
+  .navbar nav{
+    gap:8px;
+  }
+
+  .navbar a{
+    font-size:0.78rem;
+    padding:7px 10px;
+  }
+
+  .hero{
+    height:68vh;
+  }
+
+  .overlay h1{
+    font-size:1.6rem;
+  }
+
+  .overlay p{
+    font-size:0.85rem;
+  }
+
+  .text h1{
+    font-size:1.7rem;
+  }
+
+  .about h2,
+  .cards h2{
+    font-size:1.5rem;
+  }
+
+  .card{
+    padding:18px;
+  }
+
+  .hero-btn,
+  .more-btn{
+    font-size:0.88rem;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+
+  <header class="navbar">
+  <a href="index.php">
+    <div id="loader">
+    <h1> SHFMU "Halil Alidema" Pozharan</h1>
+    </div>
+  </a>
+<a href="Index.php"><img src="logo.jpg" alt=""></a>
+  <nav>
+    <a href="Historia.php" data-lang="nav-history">Historia</a>
+    <a href="Garat.php" data-lang="nav-garat">Garat</a>
+    <a href="stafikryesor.php" data-lang="nav-staff">Stafi</a>
+<a href="kalendari.php">Kalendari</a>
+
+
+  </nav>
+    </nav>    
+
+   
+</header>
+
+<section class="hero">
+
+<h1>Njoftohu me Arsimtarët Tanë</h1>
+
+<p>Stafi profesional i shkollës sonë</p>
+
+<button class="btn"
+onclick="document.getElementById('mat').scrollIntoView()">
+Shiko Arsimtarët
+</button>
+
+</section>
+
+  
+
+
+<section class="section" id="mat">
+
+<h2>Gjuhë Shqipe</h2>
+
+<div class="grid">
+
+
+<a href="biografiaqendrimiI.php" class="card-link">
+<div class="card">
+<img src="qendrimii.JPG">
+<div class="card-content">
+<h3>Qendrim Ismajli</h3>
+<div class="role">Gjuhë Shqipe</div>
+</div>
+</div>
+</a>
+
+<a href="biografiaValbona.php" class="card-link">
+<div class="card">
+<img src="IMG_0988.jpeg">
+<div class="card-content">
+<h3>Valbonë Halimi</h3>
+<div class="role">Gjuhë Shqipe</div>
+</div>
+</div>
+</a>
+
+<a href="biografiasemirja.php" class="card-link">
+<div class="card">
+<img src="semirja.jpg">
+<div class="card-content">
+<h3>Semire Pira</h3>
+<div class="role">Gjuhë Shqipe</div>
+</div>
+</div>
+</a>
+
+</div>
+
+</section>
+
+
+
+<section class="section" id="bio">
+
+<h2>Gjuhë Angleze</h2>
+
+<div class="grid">
+
+<a href="biografiaastriti.php" class="card-link">
+<div class="card">
+<img src="6bd1f179-66ac-4edc-945d-d87357f78561.JPG">
+<div class="card-content">
+<h3>Astrit Dragobuzhda</h3>
+<div class="role">Gjuhë Angleze</div>
+</div>
+</div>
+</a>
+
+<a href="biografialaureta.php" class="card-link">
+<div class="card">
+<img src="cc823153-80a8-4dd9-a802-2f2553144667.JPG">
+<div class="card-content">
+<h3>Laureta Beqiri Alidema</h3>
+<div class="role">Gjuhë Angleze</div>
+</div>
+</div>
+</a>
+
+<a href="biografiavalmira.php" class="card-link">
+<div class="card">
+<img src="PHOTO-2026-05-12-11-54-58.jpg">
+<div class="card-content">
+<h3>Valmira Sallahu Rexhepi</h3>
+<div class="role">Gjuhë Angleze</div>
+</div>
+</div>
+</a>
+
+</div>
+
+</section>
+
+<section class="section" id="tik">
+
+<h2>Gjuhë Gjermane</h2>
+
+<div class="grid">
+
+<a href="biografiaflorentina.php" class="card-link">
+<div class="card">
+<img src="florentina.jpeg">
+<div class="card-content">
+<h3>Florentina Islami</h3>
+<div class="role">Gjuhë Gjermane</div>
+</div>
+</div>
+</a>
+
+</div>
+</section>
+<section class="section" id="tik">
+
+<h2>Art Figurativ</h2>
+
+<div class="grid">
+
+<a href="biografiafitorja.php" class="card-link">
+<div class="card">
+<img src="fitorja.jpeg">
+<div class="card-content">
+<h3>Fitore Halili Pira</h3>
+<div class="role">Art Figurativ</div>
+</div>
+</div>
+</a>
+
+</div>
+
+<section class="section" id="tik">
+
+<h2>Art Muzikor</h2>
+
+<div class="grid">
+
+<a href="#" class="card-link">
+<div class="card">
+<img src="https://picsum.photos/400/600?10">
+<div class="card-content">
+<h3>Drilon Pira</h3>
+<div class="role">Art Figurativ</div>
+</div>
+</div>
+</a>
+
+</div>  
+
+<h2>Matematikë</h2>
+
+<div class="grid">
+
+<a href="biografiablerina.php" class="card-link">
+<div class="card">
+<img src="blerina.jpeg">
+<div class="card-content">
+<h3>Blerina Halili</h3>
+<div class="role">Matematikë</div>
+</div>
+</div>
+</a>
+
+
+
+<div class="grid">
+
+<a href="biografiateuta.php" class="card-link">
+<div class="card">
+<img src="FCB5464C-2E78-45AB-80A3-3FE3C34BB2EC.PNG">
+<div class="card-content">
+<h3>Teuta Zuka</h3>
+<div class="role">Matematikë</div>
+</div>
+</div>
+</a>
+
+</div>  
+</div>
+
+
+<h2>Fizikë</h2>
+<div class="grid">
+
+<a href="biografiahaxhere.php" class="card-link">
+<div class="card">
+<img src="haxhere.png">
+<div class="card-content">
+<h3>Haxhere Pira</h3>
+<div class="role">Fizikë</div>
+</div>
+</div>
+</a>
+
+</div> 
+
+
+
+<h2>Kimi</h2>
+<div class="grid">
+
+<a href="biografiaarbri.php" class="card-link">
+<div class="card">
+<img src="7f1a5082-8fe1-4442-9469-9273c2632719.JPG">
+<div class="card-content">
+<h3>Arbër Frangu</h3>
+<div class="role">Kimi</div>
+</div>
+</div>
+</a>
+
+</div> 
+
+<h2>Biologji</h2>
+<div class="grid">
+
+<a href="biografiaarbri.php" class="card-link">
+<div class="card">
+<img src="buki.png">
+<div class="card-content">
+<h3>Bukurije Alidema</h3>
+<div class="role">Biologji</div>
+</div>
+</div>
+</a>
+
+</div> 
+
+
+
+<h2>Histori</h2>
+<div class="grid">
+
+<a href="biografiamirdita.php" class="card-link">
+<div class="card">
+<img src="mirdita.jpeg">
+<div class="card-content">
+<h3>Mirdita Alidema</h3>
+<div class="role">Histori/Kordinatore e cilësisë</div>
+</div>
+</div>
+</a>
+
+
+<div class="grid">
+
+<a href="biografiaramizi.php" class="card-link">
+<div class="card">
+<img src="ramizi.png">
+<div class="card-content">
+<h3>Ramiz Demiri</h3>
+<div class="role">Histori</div>
+</div>
+</div>
+</a>
+
+</div> 
+</div>
+
+<h2>Gjeografi</h2>
+<div class="grid">
+
+<a href="#" class="card-link">
+<div class="card">
+<img src="7f1a5082-8fe1-4442-9469-9273c2632719.JPG">
+<div class="card-content">
+<h3>Vullkan Terziu</h3>
+<div class="role">Gjeografi</div>
+</div>
+</div>
+</a>
+
+</div> 
+<h2>Edukatë Qytetare</h2>
+<div class="grid">
+
+<a href="biografiaqendrimi.php" class="card-link">
+<div class="card">
+<img src="qendrimi.jpeg">
+<div class="card-content">
+<h3>Qendrim Pira</h3>
+<div class="role">Edukatë Qytetare</div>
+</div>
+</div>
+</a>
+
+</div> 
+<h2>Edukatë Fizike</h2>
+<div class="grid">
+
+<a href="biografiakuka.php" class="card-link">
+<div class="card">
+<img src="bashkimi.jpeg">
+<div class="card-content">
+<h3>Bashkim Kuka</h3>
+<div class="role">Edukatw Fizike</div>
+</div>
+</div>
+</a>
+
+</div> 
+
+<h2>TIK</h2>
+<div class="grid">
+
+<a href="biografiakili.php" class="card-link">
+<div class="card">
+<img src="kili.jpeg">
+<div class="card-content">
+<h3>Fekir Zuka</h3>
+<div class="role">TIK</div>
+</div>
+</div>
+</a>
+
+</div> 
+
+<h2>Këshilltare për Karriere</h2>
+<div class="grid">
+
+<a href="biografiaelvisa.php" class="card-link">
+<div class="card">
+<img src="elvisa.jpeg">
+<div class="card-content">
+<h3>Elvisa Alidema</h3>
+<div class="role">Këshilltare Për Karriere</div>
+</div>
+</div>
+</a>
+
+</div> 
+
+
+</body>
+</html>
